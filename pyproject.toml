@@ -1,0 +1,60 @@
+[project]
+name = "model-tokenizer"
+version = "0.1.0"
+description = "Token-accurate text splitting and counting for llama.cpp and vLLM /tokenize endpoints"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Sergey Mezentsev", email = "thebits@yandex.ru" }]
+requires-python = ">=3.9,<3.16"
+keywords = [
+  "tokenizer",
+  "text-splitting",
+  "chunking",
+  "llama.cpp",
+  "vllm",
+  "langchain",
+  "context-window",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/thebits/model-tokenizer"
+Repository = "https://github.com/thebits/model-tokenizer"
+Issues = "https://github.com/thebits/model-tokenizer/issues"
+
+[project.optional-dependencies]
+semantic-text-splitter = ["semantic-text-splitter>=0.12"]
+langchain-text-splitters = ["langchain-text-splitters"]
+
+[tool.uv]
+constraint-dependencies = ["semantic-text-splitter>=0.12"]
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "modeltokenizer"
+
+[dependency-groups]
+dev = [
+  "langchain-text-splitters",
+  "semantic-text-splitter>=0.12",
+  "tree-sitter-python",
+]
